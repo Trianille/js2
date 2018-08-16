@@ -1,0 +1,23 @@
+.gallery {
+    display: flex;
+    justify-content: center;
+    padding: 50px;
+}
+
+.item {
+    width: 150px;
+    height: 150px;
+    display: inline-block;
+    margin: 5px;
+}
+
+.item:hover {
+    background: skyblue;
+    box-shadow: 0 0 20px 0px;
+}
+
+.item > img {
+    height: inherit;
+    margin: 0 auto;
+    display: block;
+}
