@@ -32,7 +32,7 @@ function callUs(parent) {
 
 function validate() {
     const maskName = /^[A-Za-z]+$/g;
-    const maskTelFirst = /^(7|8)\d{10}$/g;
+    const maskTelFirst = /^(\+7|8)\d{10}$/g;
     const maskTel = /^\+7\(\d{3}\)\d{3}-\d{4}$/g;
     const maskEmail = /^\w+?\@[A-Za-z]+?\.[A-Za-z]{2,6}$/g;
 
@@ -53,7 +53,7 @@ function validate() {
 
     validating(maskName, '#call-us-name');
     if (validating(maskTelFirst, '#call-us-tel')) {
-        const el = document.querySelector('#call-us-tel');//we can make 1 mask but in task we have to use one variation
+        const el = document.querySelector('#call-us-tel'); //we can make 1 mask but in task we have to use one variation
         el.value = '+7(' + el.value.slice(1, 4) + ')' + el.value.slice(4, 7) + '-' + el.value.slice(7, 11);
         validating(maskTel, '#call-us-tel')
     }
