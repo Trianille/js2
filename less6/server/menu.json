@@ -1,0 +1,39 @@
+{
+    "id": "menu",
+    "class": "menu",
+    "items": [{
+        "href": "/home",
+        "text": "home"
+    }, {
+        "href": "/profile",
+        "text": "profile"
+    }, {
+        "href": "/catalog",
+        "text": "catalog",
+        "submenu": {
+            "id": "submenu1",
+            "class": "submenu",
+            "items": [{
+                "hef": "/catalog/popular",
+                "text": "popular"
+            }, {
+                "href": "/catalog/cats",
+                "text": "cats",
+                "submenu": {
+                    "id": "submenu2",
+                    "class": "submenu",
+                    "items": [{
+                        "href": "/catalog/goodCats",
+                        "text": "goodCats"
+                    }, {
+                        "href": "/catalog/badCats",
+                        "text": "badCats"
+                    }]
+                }
+            }]
+        }
+    }, {
+        "href": "/promo",
+        "text": "promo"
+    }]
+}
