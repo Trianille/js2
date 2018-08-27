@@ -74,7 +74,6 @@ function cartRender() {
 }
 
 function getUserCart(data) { //userid
-    console.log(data);
     const form = new FormData();
     form.append('json', JSON.stringify(data));
 
@@ -85,7 +84,6 @@ function getUserCart(data) { //userid
         return response.text();
     }).then((data) => {
         const obj = JSON.parse(data);
-        console.log(obj);
         const items = document.querySelector('.cart-items');
         for (let item of obj.basket) {
             const el = document.createElement('div');
@@ -107,7 +105,6 @@ function getUserCart(data) { //userid
 }
 
 function addItemToCart(data) { //id_product, quantity
-    console.log(data);
     const form = new FormData();
     form.append('json', JSON.stringify(data));
 
@@ -118,12 +115,10 @@ function addItemToCart(data) { //id_product, quantity
         return response.text();
     }).then((data) => {
         const obj = JSON.parse(data);
-        console.log(obj);
     });
 }
 
 function deleteItemFromCart(data) { //id_product, new full price??
-    console.log(data);
     const form = new FormData();
     form.append('json', JSON.stringify(data));
 
@@ -134,7 +129,6 @@ function deleteItemFromCart(data) { //id_product, new full price??
         return response.text();
     }).then((data) => {
         const obj = JSON.parse(data);
-        console.log(obj);
     });
 }
 
@@ -158,8 +152,12 @@ function validate() {
     const name = document.querySelector('#name');
     const birth = document.querySelector('#birth');
     const comment = document.querySelector('#comment');
-
-    if (maskName.test(name.value) && maskBirth.test(birth.value) && comment.value.length > 0) {
+	
+	const isName = maskName.test(name.value);
+	const isBirth = maskBirth.test(birth.value)
+	const isComment = comment.value.length > 0;
+	
+    if (isName && isBirth && isComment) {
         const data = {
             id_comment: name.value,
             text: comment.value
@@ -170,22 +168,21 @@ function validate() {
         sendComment(data);
     } else {
         let errorMessageData = '';
-        if (!maskName.test(name.value)) {
-            console.log(name.value, maskName.test(name.value));
+        if (!isName) {
             $("#name").effect('bounce', {
                 times: 3
             }, "slow");
             errorMessageData += 'Something wrong in name!<br>';
         }
 
-        if (!maskBirth.test(birth.value)) {
+        if (!isBirth) {
             $("#birth").effect('bounce', {
                 times: 3
             }, "slow");
             errorMessageData += 'Something wrong in birth!<br>';
         }
 
-        if (comment.value.length == 0) {
+        if (!isComment) {
             $("#comment").effect('bounce', {
                 times: 3
             }, "slow");
@@ -197,7 +194,6 @@ function validate() {
 }
 
 function sendComment(data) {
-    console.log(data);
     const form = new FormData();
     form.append('json', JSON.stringify(data));
 
@@ -208,7 +204,6 @@ function sendComment(data) {
         return response.text();
     }).then((data) => {
         const obj = JSON.parse(data);
-        console.log(obj);
     });
 }
 
@@ -220,7 +215,6 @@ function submitComment(id) {
 }
 
 function sendSubmition(data) {
-    console.log(data);
     const form = new FormData();
     form.append('json', JSON.stringify(data));
 
@@ -231,7 +225,6 @@ function sendSubmition(data) {
         return response.text();
     }).then((data) => {
         const obj = JSON.parse(data);
-        console.log(obj);
     });
 }
 
@@ -243,7 +236,6 @@ function deleteComment(id) {
 }
 
 function sendDeleteRequest(data) {
-    console.log(data);
     const form = new FormData();
     form.append('json', JSON.stringify(data));
 
@@ -254,7 +246,6 @@ function sendDeleteRequest(data) {
         return response.text();
     }).then((data) => {
         const obj = JSON.parse(data);
-        console.log(obj);
     });
 }
 
@@ -271,7 +262,6 @@ function getComments() {
         return response.text();
     }).then((data) => {
         const obj = JSON.parse(data);
-        console.log(obj);
         const section = document.querySelector('.comments-body');
         for (let comment of obj.comments) {
             const el = document.createElement('div');
@@ -287,7 +277,6 @@ function getComments() {
                 comment.id_comment +
                 ')">Delete?</button></div>';
             section.appendChild(el);
-            console.log(comment);
         }
     });
 }
