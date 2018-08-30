@@ -1,0 +1,18 @@
+{
+    "comments": [{
+        "id_comment": "0",
+        "text": "Comment text! "
+    },{
+        "id_comment": "1",
+        "text": "Fancy text! "
+    },{
+        "id_comment": "2",
+        "text": "Funny text! "
+    },{
+        "id_comment": "3",
+        "text": "Cosmic text! "
+    },{
+        "id_comment": "4",
+        "text": "Sad text! "
+    }]
+}

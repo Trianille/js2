@@ -1,0 +1,58 @@
+* {
+    box-sizing: border-box;
+}
+
+body,
+html {
+    padding: 0px;
+}
+
+.container {
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.comment-section,
+.cart {
+    width: 500px;
+    border: 1px solid black;
+    margin: 5px;
+    padding: 10px;
+}
+
+.comments-body,
+.cart-items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.comments-body,
+.comment-form,
+.cart-items {
+    padding: 10px;
+    margin: 5px;
+}
+
+.comment,
+.cart-items > div {
+    padding: 10px;
+    margin: 5px;
+    background: skyblue;
+    color: white;
+    width: 100px;
+}
+
+.comment-form div {
+    display: flex;
+    justify-content: space-between;
+    margin: 5px;
+}
+
+.swiper-container {
+    width: 600px;
+    border: 1px solid black;
+    margin: 5px;
+}
