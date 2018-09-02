@@ -1,0 +1,22 @@
+{
+  "name": "js2",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Ivan <nekofurs@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "normalize.css": "*",
+    "jquery": "2.*"
+  }
+}

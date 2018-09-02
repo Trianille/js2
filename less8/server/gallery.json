@@ -1,0 +1,26 @@
+{
+    "id": "gallery",
+    "class": "gallery",
+    "items": [
+        {
+            "src_small": "img/cat1.jpg",
+            "alt": "cat",
+            "src": "img/cat1.jpg"
+        },
+        {
+            "src_small": "img/cat2.jpg",
+            "alt": "cat",
+            "src": "img/cat2.jpg"
+        },
+        {
+            "src_small": "img/cat3.jpg",
+            "alt": "cat",
+            "src": "img/cat3.jpg"
+        },
+        {
+            "src_small": "img/cat4.jpg",
+            "alt": "cat",
+            "src": "img/cat4.jpg"
+        }
+    ]
+}
